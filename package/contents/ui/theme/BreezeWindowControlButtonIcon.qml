@@ -39,7 +39,7 @@ Canvas {
         ctx.fillStyle = foregroundColor;
         ctx.lineJoin = "miter";
         ctx.lineCap = "round";
-        ctx.lineWidth = Math.max(1, 20 / width);
+        ctx.lineWidth = Math.max(1, 22.0 / width);
         switch (buttonType) {
         case WindowControlButton.Type.MinimizeButton:
             ctx.moveTo(4, 7);
