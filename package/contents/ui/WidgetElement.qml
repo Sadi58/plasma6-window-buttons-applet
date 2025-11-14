@@ -7,11 +7,8 @@
 import QtQuick
 
 QtObject {
-
     enum Type {
         WindowControlButton,
-        WindowTitle,
-        WindowIcon,
         Spacer
     }
 
