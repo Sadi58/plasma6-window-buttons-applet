@@ -2,18 +2,18 @@
     "KPlugin": {
         "Authors": [
             {
-                "Email": "publicantroids@gmail.com",
-                "Name": "Anton Kharuzhy"
+                "Email": "Sadi1958@gmail.com",
+                "Name": "Sadi Yumuşak"
             }
         ],
         "Category": "Windows and Tasks",
         "Description": "A widget with buttons to control active task",
         "Icon": "window-close",
-        "Id": "com.github.antroids.application-title-bar",
-        "Name": "Application Title Bar",
+        "Id": "com.github.sadi58.plasma6-window-buttons-applet",
+        "Name": "Window Buttons",
         "License": "GPL-3.0+",
         "Version": "0.8.7",
-        "Website": "https://github.com/antroids/application-title-bar",
+        "Website": "https://github.com/sadi58/plasma6-window-buttons-applet",
         "FormFactors": [
             "desktop"
         ]
