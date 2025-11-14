@@ -1,4 +1,4 @@
-# Window Buttons Applet
+# Window Buttons Applet (Work-In-Progress, assisted by Copilot)
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 ![GitHub Release](https://img.shields.io/github/v/release/antroids/application-title-bar)
