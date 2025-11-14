@@ -97,85 +97,9 @@ function widgetElementModelFromName(name) {
                 "type": WidgetElement.Type.WindowControlButton,
                 "windowControlButtonType": WindowControlButton.Type.AppMenuButton
             };
-        case "windowTitle":
-            return {
-                "type": WidgetElement.Type.WindowTitle
-            };
-        case "windowIcon":
-            return {
-                "type": WidgetElement.Type.WindowIcon
-            };
         case "spacer":
             return {
                 "type": WidgetElement.Type.Spacer
             };
-    }
-}
-
-function truncateString(str, n) {
-    return (str.length > n) ? str.slice(0, n - 1) + '\u2026' : str;
-};
-
-class Replacement {
-    replace(_title) {
-        throw new Error("Not implemented");
-    }
-
-    static createReplacement(type, pattern, template) {
-        switch (type) {
-            case 0: return new StringReplacement(pattern, template);
-            case 1: return new RegExpReplacement(pattern, template);
-            default:
-                throw new Error("Unknown replacement type: " + type);
-        }
-    }
-
-    static createReplacementList(types, patterns, templates) {
-        const length = types.length;
-        let result = new Array();
-        for (let i = 0; i < length; i++) {
-            const type = types[i];
-            const pattern = patterns[i];
-            const template = templates[i];
-            if (type === undefined || pattern === undefined || template === undefined) {
-                break; // Inconsistent state
-            } else {
-                result.push(Replacement.createReplacement(type, pattern, template));
-            }
-        }
-        return result;
-    }
-
-    static applyReplacementList(title, replacements) {
-        return replacements.reduce((acc, cur) => cur.replace(acc), title);
-    }
-}
-
-class StringReplacement extends Replacement {
-    constructor(stringToReplace, stringReplacement) {
-        super();
-        this.stringToReplace = stringToReplace;
-        this.stringReplacement = stringReplacement;
-    }
-
-    replace(title) {
-        let replaced = title.replace(this.stringToReplace, this.stringReplacement);
-        while (replaced !== title) {
-            title = replaced;
-            replaced = title.replace(this.stringToReplace, this.stringReplacement);
-        }
-        return replaced;
-    }
-}
-
-class RegExpReplacement extends Replacement {
-    constructor(regExp, replacement) {
-        super();
-        this.regExp = new RegExp(regExp, "g");
-        this.replacement = replacement;
-    }
-
-    replace(title) {
-        return title.replace(this.regExp, this.replacement);
     }
 }
