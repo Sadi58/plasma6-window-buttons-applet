@@ -166,12 +166,6 @@ PlasmoidItem {
         Layout.preferredWidth: root.vertical ? widgetRow.Layout.preferredHeight : widgetRow.Layout.preferredWidth
         Layout.preferredHeight: root.vertical ? widgetRow.Layout.preferredWidth : widgetRow.Layout.preferredHeight
 
-        MouseHandlers {
-            Component.onCompleted: {
-                invokeKWinShortcut.connect(root.invokeKWinShortcut);
-            }
-        }
-
         WidgetToolTip {
             anchors.fill: parent
             tasksModel: root.tasksModel
