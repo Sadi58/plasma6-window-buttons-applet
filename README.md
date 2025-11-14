@@ -1,7 +1,10 @@
-# Application Title Bar
+# Window Buttons Applet
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 ![GitHub Release](https://img.shields.io/github/v/release/antroids/application-title-bar)
+
+This is a Plasma 6 applet that shows window buttons in your panels.
+This plasmoid is forked from [![Application Title Bar](https://github.com/antroids/application-title-bar)] to create a variant that includes window buttons only to mimick the Plasma 5 **Window Buttons** applet by [![psifidos](https://github.com/psifidotos)].  
 
 ### NOTE: Plasma 6.3 - 6.3.3 Compatibility issues
 A Drag action handler does not work properly on Plasma 6.3 - 6.3.3 with ButtonsRebind KWin plugin enabled.
@@ -18,25 +21,21 @@ kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key buttonsrebindEnabled
 
 ## Description
 
-KDE plasmoid compatible with Qt6 with window title and buttons.
-I like minimalistic display layout and used Active Window Control plasmoid, but it's abandoned for several years and now incompatible with Plasma6.
-So, I decided to create my own widget with the minimal set of features.
+KDE plasmoid compatible with Qt6 with window buttons only.
 
 <img src="docs/img/AllInOne.png" />
 
 ### Goal
 
-Stable and fast widget with control buttons and window title, ideally with the same functionality as Unity panel.
-I would like to keep the widget pure QML to avoid incompatibility and maintenance issues.
+Stable and fast widget with control buttons only, ideally with the same functionality as Unity panel.
+Using pure QML to avoid incompatibility and maintenance issues.
 
 Disadvantages of pure QML widget:
 * Only icons can be used from Aurorae themes, the rest is ignored. Binary themes are unsupported at all (Issues [#18](https://github.com/antroids/application-title-bar/issues/18), [#6](https://github.com/antroids/application-title-bar/issues/6)).
-* I cannot see the way to build menu with current plasmoid API (Issue [#13](https://github.com/antroids/application-title-bar/issues/13))
 
 ### Features
 
 * Close, minimize, maximize, keep below/above buttons.
-* Title with app name.
 * Configure actions on mouse events.
 * Configurable elements set and order.
 * Different theming options. Internal Breeze icons, System icons and Aurorae theme.
@@ -46,29 +45,29 @@ Disadvantages of pure QML widget:
 ## Installing
 
 1. Bash script
-    - Update: `wget https://github.com/antroids/application-title-bar/releases/latest/download/application-title-bar.plasmoid -O ${TMPDIR:-/tmp}/application-title-bar.plasmoid && kpackagetool6 -t Plasma/Applet -u ${TMPDIR:-/tmp}/application-title-bar.plasmoid && systemctl --user restart plasma-plasmashell.service`
+    - Update: `wget https://github.com/sadi58/plasma6-window-buttons-applet/releases/latest/download/plasma6-window-buttons-applet.plasmoid -O ${TMPDIR:-/tmp}/plasma6-window-buttons-applet.plasmoid && kpackagetool6 -t Plasma/Applet -u ${TMPDIR:-/tmp}/plasma6-window-buttons-applet.plasmoid && systemctl --user restart plasma-plasmashell.service`
 
-    - Install `wget https://github.com/antroids/application-title-bar/releases/latest/download/application-title-bar.plasmoid -O ${TMPDIR:-/tmp}/application-title-bar.plasmoid && kpackagetool6 -t Plasma/Applet -i ${TMPDIR:-/tmp}/application-title-bar.plasmoid && systemctl --user restart plasma-plasmashell.service`
+    - Install `wget https://github.com/sadi58/plasma6-window-buttons-applet/releases/latest/download/plasma6-window-buttons-applet.plasmoid -O ${TMPDIR:-/tmp}/plasma6-window-buttons-applet.plasmoid && kpackagetool6 -t Plasma/Applet -i ${TMPDIR:-/tmp}/plasma6-window-buttons-applet.plasmoid && systemctl --user restart plasma-plasmashell.service`
 
 2. Manual with Plasma UI
     - Install via "Add Widgets..." -> "Get New Widgets..." -> "Download..."
-    - Install from [KDE Store](https://store.kde.org/p/2135509)
-    - Download Latest \*.plasmoid from [Releases page](https://github.com/antroids/application-title-bar/releases) and install it via "Add Widgets..." -> "Get New Widgets..." -> "Install Widget From Local file"
+    - Install from [KDE Store](https://store.kde.org/p/???????)
+    - Download Latest \*.plasmoid from [Releases page](https://github.com/sadi58/plasma6-window-buttons-applet/releases) and install it via "Add Widgets..." -> "Get New Widgets..." -> "Install Widget From Local file"
 
 3. Nix (needs Nixpkgs unstable 24.11 or later)
 
     On NixOS:
     ```nix
     environment.systemPackages = with pkgs; [
-        application-title-bar
+        plasma6-window-buttons-applet
     ];
     ```
    Other distros:
    ```
    # without flakes:
-   nix-env -iA nixpkgs.application-title-bar
+   nix-env -iA nixpkgs.plasma6-window-buttons-applet
    # with flakes:
-   nix profile install nixpkgs#application-title-bar
+   nix profile install nixpkgs#plasma6-window-buttons-applet
    ```
 ### Additional packages
 
@@ -84,10 +83,10 @@ Although the widget is being used by me and a lot of other people, there is stil
 
 In such cases you can use the following script to downgrade the panel version:
 `
-wget https://github.com/antroids/application-title-bar/releases/download/v0.6.8/application-title-bar.plasmoid -O ${TMPDIR:-/tmp}/application-title-bar.plasmoid && kpackagetool6 -t Plasma/Applet -u ${TMPDIR:-/tmp}/application-title-bar.plasmoid && systemctl --user restart plasma-plasmashell.service
+wget https://github.com/sadi58/plasma6-window-buttons-applet/releases/download/v0.6.8/plasma6-window-buttons-applet.plasmoid -O ${TMPDIR:-/tmp}/plasma6-window-buttons-applet.plasmoid && kpackagetool6 -t Plasma/Applet -u ${TMPDIR:-/tmp}/plasma6-window-buttons-applet.plasmoid && systemctl --user restart plasma-plasmashell.service
 `
 
-Or you can remove the widget: `kpackagetool6 --type Plasma/Applet --remove com.github.antroids.application-title-bar`
+Or you can remove the widget: `kpackagetool6 --type Plasma/Applet --remove com.github.sadi58.plasma6-window-buttons-applet`
 
 Please, don't forget to fill the report about the issues.
 
