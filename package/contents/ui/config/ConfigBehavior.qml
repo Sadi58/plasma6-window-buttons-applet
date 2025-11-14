@@ -22,11 +22,8 @@ KCM.SimpleKCM {
     property alias cfg_widgetActiveTaskFilterByVirtualDesktop: widgetActiveTaskFilterByVirtualDesktop.checked
     property alias cfg_widgetActiveTaskFilterNotMaximized: widgetActiveTaskFilterNotMaximized.checked
     property alias cfg_disableButtonsForNotHoveredWidget: disableButtonsForNotHoveredWidget.checked
-    property alias cfg_windowTitleDragEnabled: windowTitleDragEnabled.checked
     property alias cfg_widgetMouseAreaClickEnabled: widgetMouseAreaClickEnabled.checked
     property alias cfg_widgetMouseAreaWheelEnabled: widgetMouseAreaWheelEnabled.checked
-    property alias cfg_windowTitleDragOnlyMaximized: windowTitleDragOnlyMaximized.checked
-    property alias cfg_windowTitleDragThreshold: windowTitleDragThreshold.value
     property string cfg_widgetMouseAreaLeftDragAction
     property string cfg_widgetMouseAreaLeftClickAction
     property string cfg_widgetMouseAreaLeftDoubleClickAction
@@ -160,63 +157,6 @@ KCM.SimpleKCM {
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Mouse area drag")
-        }
-
-        CheckBox {
-            id: windowTitleDragEnabled
-
-            text: i18n("enabled")
-        }
-
-        CheckBox {
-            id: windowTitleDragOnlyMaximized
-
-            enabled: windowTitleDragEnabled.checked
-            Kirigami.FormData.label: i18n("Only maximized:")
-            text: i18n("enabled")
-        }
-
-        SpinBox {
-            id: windowTitleDragThreshold
-
-            enabled: windowTitleDragEnabled.checked
-            Kirigami.FormData.label: i18n("Threshold:")
-            from: 0
-            to: 512
-        }
-
-        Kirigami.InlineMessage {
-            anchors.left: parent.left
-            anchors.right: parent.right
-            text: i18n("Window Move action is incompatible with Mouse Drag in X11 sessions.")
-            type: Kirigami.MessageType.Error
-            visible: Utils.isX11() && leftButtonDragAction.currentValue == "Window Move"
-        }
-
-        KWinShortcutComboBox {
-            id: leftButtonDragAction
-
-            label: i18n("Left button drag:")
-            enabled: windowTitleDragEnabled.checked
-            initialValue: cfg_widgetMouseAreaLeftDragAction
-            onActivated: cfg_widgetMouseAreaLeftDragAction = currentValue
-        }
-
-        Kirigami.InlineMessage {
-            anchors.left: parent.left
-            anchors.right: parent.right
-            text: i18n("Window Move action is incompatible with Mouse Drag in X11 sessions.")
-            type: Kirigami.MessageType.Error
-            visible: Utils.isX11() && middleButtonDragAction.currentValue == "Window Move"
-        }
-
-        KWinShortcutComboBox {
-            id: middleButtonDragAction
-
-            label: i18n("Middle button drag:")
-            enabled: windowTitleDragEnabled.checked
-            initialValue: cfg_widgetMouseAreaMiddleDragAction
-            onActivated: cfg_widgetMouseAreaMiddleDragAction = currentValue
         }
 
         Kirigami.Separator {
