@@ -28,24 +28,9 @@ KCM.SimpleKCM {
     property int cfg_widgetVerticalAlignment
     property alias cfg_widgetFillWidth: widgetFillWidth.checked
     property alias cfg_widgetToolTipMode: widgetToolTipMode.currentIndex
-    property alias cfg_windowTitleMinimumWidth: windowTitleMinimumWidth.value
-    property alias cfg_windowTitleMaximumWidth: windowTitleMaximumWidth.value
-    property alias cfg_windowTitleFontSize: windowTitleFontSize.value
-    property alias cfg_windowTitleFontBold: windowTitleFontBold.checked
-    property alias cfg_windowTitleFontSizeMode: windowTitleFontSizeMode.currentIndex
-    property alias cfg_windowTitleSource: windowTitleSource.currentIndex
-    property alias cfg_windowTitleHorizontalAlignment: windowTitleHorizontalAlignment.currentIndex
-    property alias cfg_windowTitleVerticalAlignment: windowTitleVerticalAlignment.currentIndex
-    property alias cfg_windowTitleHideEmpty: windowTitleHideEmpty.checked
-    property alias cfg_windowTitleUndefined: windowTitleUndefined.text
-    property alias cfg_windowTitleMarginsLeft: windowTitleMarginsLeft.value
-    property alias cfg_windowTitleMarginsTop: windowTitleMarginsTop.value
-    property alias cfg_windowTitleMarginsBottom: windowTitleMarginsBottom.value
-    property alias cfg_windowTitleMarginsRight: windowTitleMarginsRight.value
     property alias cfg_widgetElements: widgetElements.elements
     property alias cfg_overrideElementsMaximized: overrideElementsMaximized.checked
     property alias cfg_widgetElementsMaximized: widgetElementsMaximized.elements
-    property alias cfg_windowTitleSourceMaximized: windowTitleSourceMaximized.currentIndex
 
     Kirigami.FormLayout {
         anchors.left: parent.left
@@ -289,129 +274,6 @@ You can install more of regular Aurorae themes for window decorations in System 
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Window Title")
-        }
-
-        SpinBox {
-            id: windowTitleMinimumWidth
-
-            to: 4096
-            Kirigami.FormData.label: i18n("Minimum width:")
-        }
-
-        SpinBox {
-            id: windowTitleMaximumWidth
-
-            from: -1
-            to: 4096
-            Kirigami.FormData.label: i18n("Maximum width:")
-        }
-
-        SpinBox {
-            id: windowTitleFontSize
-
-            Kirigami.FormData.label: i18n("Font size:")
-            from: 1
-            to: 64
-        }
-
-        ComboBox {
-            id: windowTitleFontSizeMode
-
-            Kirigami.FormData.label: i18n("Font fit:")
-            model: [i18n("Fixed size"), i18n("Horizontal fit"), i18n("Vertical fit"), i18n("Fit")]
-        }
-
-        CheckBox {
-            id: windowTitleFontBold
-
-            Kirigami.FormData.label: i18n("Font bold:")
-        }
-
-        CheckBox {
-            id: windowTitleHideEmpty
-
-            Kirigami.FormData.label: i18n("Hide empty title:")
-        }
-
-        TextField {
-            id: windowTitleUndefined
-
-            Kirigami.FormData.label: i18n("Window title undefined:")
-            Layout.alignment: Qt.AlignLeft
-        }
-
-        ComboBox {
-            id: windowTitleSource
-
-            Kirigami.FormData.label: i18n("Window title source:")
-            model: [i18n("Application name"), i18n("Decoration"), i18n("Generic Application name"), i18n("Always undefined")]
-        }
-
-        ComboBox {
-            id: windowTitleHorizontalAlignment
-
-            Kirigami.FormData.label: i18n("Horizontal alignment:")
-            model: [i18n("Left"), i18n("Right"), i18n("Center"), i18n("Justify")]
-        }
-
-        ComboBox {
-            id: windowTitleVerticalAlignment
-
-            Kirigami.FormData.label: i18n("Vertical alignment:")
-            model: [i18n("Top"), i18n("Bottom"), i18n("Center")]
-        }
-
-        RowLayout {
-            Kirigami.FormData.label: i18n("Window title margins:")
-
-            Label {
-                text: i18n("top:")
-            }
-
-            SpinBox {
-                id: windowTitleMarginsTop
-
-                from: 0
-                to: 64
-            }
-
-            Label {
-                text: i18n("left:")
-            }
-
-            SpinBox {
-                id: windowTitleMarginsLeft
-
-                from: 0
-                to: 64
-            }
-
-            Label {
-                text: i18n("bottom:")
-            }
-
-            SpinBox {
-                id: windowTitleMarginsBottom
-
-                from: 0
-                to: 64
-            }
-
-            Label {
-                text: i18n("right:")
-            }
-
-            SpinBox {
-                id: windowTitleMarginsRight
-
-                from: 0
-                to: 64
-            }
-        }
-
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Override for maximized windows")
         }
 
@@ -441,12 +303,5 @@ You can install more of regular Aurorae themes for window decorations in System 
             }
         }
 
-        ComboBox {
-            id: windowTitleSourceMaximized
-
-            enabled: overrideElementsMaximized.checked
-            Kirigami.FormData.label: i18n("Window title source:")
-            model: [i18n("Application name"), i18n("Decoration"), i18n("Generic Application name"), i18n("Always undefined")]
-        }
     }
 }
