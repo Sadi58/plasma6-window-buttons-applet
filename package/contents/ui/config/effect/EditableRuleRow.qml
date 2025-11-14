@@ -16,7 +16,7 @@ import org.kde.kirigami as Kirigami
 RowLayout {
     id: root
 
-    readonly property list<string> argumentFragments: ["ActiveWindowFlagCondition", "ActiveWindowStringCondition", "ActiveWindowRegExpCondition"]
+    readonly property list<string> argumentFragments: ["ActiveWindowFlagCondition"]
 
     property RuleModel ruleModel: RuleModel {}
     required property JsonListModel effects
@@ -33,21 +33,16 @@ RowLayout {
         }
     }
 
-    ComboBox {
+    Label {
         Kirigami.FormData.label: i18n("Type:")
+        text: i18n("Flag")
         Layout.preferredWidth: Kirigami.Units.gridUnit * 4
-        wheelEnabled: false
-        model: [i18n("Flag"), i18n("Value"), i18n("Regex")]
-        currentIndex: ruleModel.conditionType
-        onActivated: function (index) {
-            ruleModel.conditionType = index;
-        }
     }
 
     Loader {
         id: argumentFragmentLoader
         Layout.fillWidth: true
-        source: argumentFragments[ruleModel.conditionType] + ".qml"
+        source: argumentFragments[0] + ".qml"
 
         Binding {
             when: argumentFragmentLoaderConnections.enabled
