@@ -84,10 +84,6 @@ RowLayout {
                         switch (elementModel.type) {
                         case WidgetElement.Type.WindowControlButton:
                             return windowControlButton;
-                        case WidgetElement.Type.WindowTitle:
-                            return windowTitle;
-                        case WidgetElement.Type.WindowIcon:
-                            return windowIcon;
                         case WidgetElement.Type.Spacer:
                             return spacerIcon;
                         }
@@ -107,35 +103,6 @@ RowLayout {
                     width: widgetElements.iconSize
                     buttonType: modelData.windowControlButtonType
                     mouseAreaEnabled: false
-                }
-            }
-
-            Component {
-                id: windowTitle
-
-                PlasmaComponents.Label {
-                    property var modelData
-
-                    text: i18n("Title")
-                    font.bold: page.cfg_windowTitleFontBold
-                    maximumLineCount: 1
-                    elide: Text.ElideRight
-                    wrapMode: Text.WrapAnywhere
-                    verticalAlignment: Text.AlignVCenter
-                    height: widgetElements.iconSize
-                    width: widgetElements.iconSize
-                }
-            }
-
-            Component {
-                id: windowIcon
-
-                Kirigami.Icon {
-                    property var modelData
-
-                    source: "window"
-                    height: widgetElements.iconSize
-                    width: widgetElements.iconSize
                 }
             }
 
