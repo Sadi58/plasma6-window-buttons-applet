@@ -21,12 +21,6 @@ ConfigModel {
     }
 
     ConfigCategory {
-        name: i18n("Replacements")
-        icon: "document-replace"
-        source: "config/TitleReplacements.qml"
-    }
-
-    ConfigCategory {
         name: i18n("Effects")
         icon: "special-effects-symbolic"
         source: "config/effect/ConfigEffects.qml"
