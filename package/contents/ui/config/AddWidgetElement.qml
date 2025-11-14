@@ -48,16 +48,6 @@ ComboBox {
         }
 
         ListElement {
-            name: "Window title"
-            value: "windowTitle"
-        }
-
-        ListElement {
-            name: "Window Icon"
-            value: "windowIcon"
-        }
-
-        ListElement {
             name: "Spacer"
             value: "spacer"
         }
