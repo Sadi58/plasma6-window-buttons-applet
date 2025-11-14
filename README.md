@@ -4,6 +4,7 @@
 ![GitHub Release](https://img.shields.io/github/v/release/antroids/application-title-bar)
 
 This is a Plasma 6 applet that shows window buttons in your panels.
+
 This plasmoid is forked from [![Application Title Bar](https://github.com/antroids/application-title-bar)] to create a variant that includes window buttons only to mimick the Plasma 5 **Window Buttons** applet by [![psifidos](https://github.com/psifidotos)].  
 
 ### NOTE: Plasma 6.3 - 6.3.3 Compatibility issues
