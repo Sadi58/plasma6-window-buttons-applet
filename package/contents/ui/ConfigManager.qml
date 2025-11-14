@@ -95,7 +95,7 @@ Loader {
 
     function savePlasmoidConfig(fileUrl) {
         const config = getPlasmoidConfig();
-        saveSettings("Application Title Bar Configuration", config, fileUrl);
+        saveSettings("Window Buttons Configuration", config, fileUrl);
     }
 
     function loadPlasmoidConfig(fileUrl) {
