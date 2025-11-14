@@ -69,10 +69,6 @@ PlasmoidItem {
                 switch (modelData.type) {
                 case WidgetElement.Type.WindowControlButton:
                     return windowControlButton;
-                case WidgetElement.Type.WindowTitle:
-                    return windowTitle;
-                case WidgetElement.Type.WindowIcon:
-                    return windowIcon;
                 case WidgetElement.Type.Spacer:
                     return spacerIcon;
                 }
@@ -128,21 +124,6 @@ PlasmoidItem {
     }
 
     Component {
-        id: windowIcon
-
-        Kirigami.Icon {
-            property var modelData
-
-            height: root.elementHeight
-            width: height
-            Layout.alignment: root.widgetAlignment
-            Layout.preferredWidth: width
-            source: tasksModel.activeWindow.icon || "window"
-            enabled: tasksModel.hasActiveWindow && !!tasksModel.activeWindow.icon
-        }
-    }
-
-    Component {
         id: spacerIcon
 
         Rectangle {
@@ -154,102 +135,6 @@ PlasmoidItem {
             Layout.preferredWidth: width
             color: "transparent"
             enabled: tasksModel.hasActiveWindow
-        }
-    }
-
-    Component {
-        id: windowTitle
-
-        PlasmaComponents.Label {
-            id: windowTitleLabel
-
-            readonly property var horizontalAlignmentValues: [Text.AlignLeft, Text.AlignRight, Text.AlignHCenter, Text.AlignJustify]
-            readonly property var verticalAlignmentValues: [Text.AlignTop, Text.AlignBottom, Text.AlignVCenter]
-
-            property var modelData
-            property bool empty: text === undefined || text === ""
-            property bool hideEmpty: empty && plasmoid.configuration.windowTitleHideEmpty
-            property int windowTitleSource: plasmoid.configuration.overrideElementsMaximized && tasksModel.activeWindow.maximized ? plasmoid.configuration.windowTitleSourceMaximized : plasmoid.configuration.windowTitleSource
-            property var titleTextReplacements: []
-
-            Layout.minimumWidth: plasmoid.configuration.windowTitleMinimumWidth
-            Layout.maximumWidth: !hideEmpty ? plasmoid.configuration.windowTitleMaximumWidth : 0
-            Layout.alignment: root.widgetAlignment
-            Layout.fillWidth: plasmoid.configuration.widgetFillWidth
-            Layout.fillHeight: true
-            Layout.preferredWidth: textMetrics.advanceWidth + leftPadding + rightPadding + 1 // Magic number
-            text: titleText(windowTitleSource) || plasmoid.configuration.windowTitleUndefined
-            font.pointSize: plasmoid.configuration.windowTitleFontSize
-            font.bold: plasmoid.configuration.windowTitleFontBold
-            fontSizeMode: plasmoid.configuration.windowTitleFontSizeMode
-            maximumLineCount: 1
-            elide: Text.ElideRight
-            wrapMode: Text.WrapAnywhere
-            enabled: tasksModel.hasActiveWindow
-            horizontalAlignment: horizontalAlignmentValues[plasmoid.configuration.windowTitleHorizontalAlignment]
-            verticalAlignment: verticalAlignmentValues[plasmoid.configuration.windowTitleVerticalAlignment]
-
-            bottomPadding: !hideEmpty ? plasmoid.configuration.windowTitleMarginsBottom : 0
-            leftPadding: !hideEmpty ? plasmoid.configuration.windowTitleMarginsLeft : 0
-            rightPadding: !hideEmpty ? plasmoid.configuration.windowTitleMarginsRight : 0
-            topPadding: !hideEmpty ? plasmoid.configuration.windowTitleMarginsTop : 0
-
-            Accessible.role: Accessible.TitleBar
-            Accessible.name: text
-
-            TextMetrics {
-                id: textMetrics
-                font: windowTitleLabel.font
-                text: windowTitleLabel.text
-            }
-
-            Connections {
-                target: plasmoid.configuration
-
-                function onTitleReplacementsTypesChanged() {
-                    updateTitleTextReplacements();
-                }
-
-                function onTitleReplacementsPatternsChanged() {
-                    updateTitleTextReplacements();
-                }
-
-                function onTitleReplacementsTemplatesChanged() {
-                    updateTitleTextReplacements();
-                }
-            }
-
-            Component.onCompleted: updateTitleTextReplacements()
-
-            function titleText(windowTitleSource) {
-                let titleTextResult = "";
-                switch (windowTitleSource) {
-                case 0:
-                    titleTextResult = tasksModel.activeWindow.appName;
-                    break;
-                case 1:
-                    titleTextResult = tasksModel.activeWindow.decoration;
-                    break;
-                case 2:
-                    titleTextResult = tasksModel.activeWindow.genericAppName;
-                    break;
-                case 3:
-                    titleTextResult = plasmoid.configuration.windowTitleUndefined;
-                    break;
-                }
-                if (titleTextResult) {
-                    titleTextResult = Utils.Replacement.applyReplacementList(titleTextResult, titleTextReplacements);
-                }
-                return titleTextResult;
-            }
-
-            function updateTitleTextReplacements() {
-                Qt.callLater(_updateTitleTextReplacements);
-            }
-
-            function _updateTitleTextReplacements() {
-                titleTextReplacements = Utils.Replacement.createReplacementList(plasmoid.configuration.titleReplacementsTypes, plasmoid.configuration.titleReplacementsPatterns, plasmoid.configuration.titleReplacementsTemplates);
-            }
         }
     }
 
@@ -303,7 +188,7 @@ PlasmoidItem {
             height: root.vertical ? representationProxy.width : representationProxy.height
 
             Accessible.role: Accessible.Grouping
-            Accessible.name: i18n("Application title bar")
+            Accessible.name: i18n("Window Buttons")
 
             transform: [
                 Rotation {
