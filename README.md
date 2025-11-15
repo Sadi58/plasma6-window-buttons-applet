@@ -5,7 +5,7 @@
 
 This is a Plasma 6 applet that shows window buttons in your panels.
 
-This plasmoid is forked from [![Application Title Bar](https://github.com/antroids/application-title-bar)] to create a variant that includes window buttons only to mimick the Plasma 5 **Window Buttons** applet by [![psifidos](https://github.com/psifidotos)].  
+This plasmoid is forked from [![Application Title Bar](https://github.com/antroids/application-title-bar)] (hence all credit goes to [![antroids](https://github.com/antroids)] to create a variant that includes window control buttons only. All I've done is to remove everything other than necessary to mimick the Plasma 5 **Window Buttons** applet by [![psifidos](https://github.com/psifidotos)]) 
 
 ### NOTE: Plasma 6.3 - 6.3.3 Compatibility issues
 A Drag action handler does not work properly on Plasma 6.3 - 6.3.3 with ButtonsRebind KWin plugin enabled.
@@ -24,7 +24,7 @@ kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key buttonsrebindEnabled
 
 KDE plasmoid compatible with Qt6 with window buttons only.
 
-<img src="docs/img/AllInOne.png" />
+Screenshot: Coming soon...
 
 ### Goal
 
