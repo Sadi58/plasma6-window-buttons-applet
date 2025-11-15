@@ -8,7 +8,7 @@
         ],
         "Category": "Windows and Tasks",
         "Description": "A widget with buttons to control active task",
-        "Icon": "window-close",
+        "Icon": "preferences-desktop-theme-windowdecorations",
         "Id": "com.github.sadi58.plasma6-window-buttons-applet",
         "Name": "Window Buttons",
         "License": "GPL-3.0+",
