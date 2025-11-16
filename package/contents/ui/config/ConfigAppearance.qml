@@ -27,7 +27,6 @@ KCM.SimpleKCM {
     property int cfg_widgetHorizontalAlignment
     property int cfg_widgetVerticalAlignment
     property alias cfg_widgetFillWidth: widgetFillWidth.checked
-    property alias cfg_widgetToolTipMode: widgetToolTipMode.currentIndex
     property alias cfg_widgetElements: widgetElements.elements
     property alias cfg_overrideElementsMaximized: overrideElementsMaximized.checked
     property alias cfg_widgetElementsMaximized: widgetElementsMaximized.elements
@@ -154,13 +153,6 @@ KCM.SimpleKCM {
             id: widgetFillWidth
 
             Kirigami.FormData.label: i18n("Fill free space on Panel:")
-        }
-
-        ComboBox {
-            id: widgetToolTipMode
-
-            Kirigami.FormData.label: i18n("Tooltip Mode:")
-            model: [i18n("Disabled"), i18n("Only for maximized windows"), i18n("Enabled")]
         }
 
         WidgetElements {
@@ -302,6 +294,5 @@ You can install more of regular Aurorae themes for window decorations in System 
                 }
             }
         }
-
     }
 }
