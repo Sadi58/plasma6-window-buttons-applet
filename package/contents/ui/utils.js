@@ -62,41 +62,6 @@ function widgetElementModelFromName(name) {
                 "type": WidgetElement.Type.WindowControlButton,
                 "windowControlButtonType": WindowControlButton.Type.MaximizeButton
             };
-        case "windowAllDesktopsButton":
-            return {
-                "type": WidgetElement.Type.WindowControlButton,
-                "windowControlButtonType": WindowControlButton.Type.AllDesktopsButton
-            };
-        case "windowKeepAboveButton":
-            return {
-                "type": WidgetElement.Type.WindowControlButton,
-                "windowControlButtonType": WindowControlButton.Type.KeepAboveButton
-            };
-        case "windowKeepBelowButton":
-            return {
-                "type": WidgetElement.Type.WindowControlButton,
-                "windowControlButtonType": WindowControlButton.Type.KeepBelowButton
-            };
-        case "windowShadeButton":
-            return {
-                "type": WidgetElement.Type.WindowControlButton,
-                "windowControlButtonType": WindowControlButton.Type.ShadeButton
-            };
-        case "windowHelpButton":
-            return {
-                "type": WidgetElement.Type.WindowControlButton,
-                "windowControlButtonType": WindowControlButton.Type.HelpButton
-            };
-        case "windowMenuButton":
-            return {
-                "type": WidgetElement.Type.WindowControlButton,
-                "windowControlButtonType": WindowControlButton.Type.MenuButton
-            };
-        case "windowAppMenuButton":
-            return {
-                "type": WidgetElement.Type.WindowControlButton,
-                "windowControlButtonType": WindowControlButton.Type.AppMenuButton
-            };
         case "spacer":
             return {
                 "type": WidgetElement.Type.Spacer
