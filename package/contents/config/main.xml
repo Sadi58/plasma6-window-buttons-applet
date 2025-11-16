@@ -42,14 +42,7 @@
         <entry name="widgetFillWidth" type="Bool">
             <default>false</default>
         </entry>
-        <entry name="widgetToolTipMode" type="Enum">
-            <choices>
-                <choice name="Disabled" />
-                <choice name="MaximizedWindow" />
-                <choice name="Always" />
-            </choices>
-            <default>2</default>
-        </entry>
+
         <entry name="widgetElementsDisabledMode" type="Enum">
             <choices>
                 <choice name="Deactivated" />
@@ -67,6 +60,33 @@
         </entry>
         <entry name="widgetElementsMaximized" type="StringList">
             <default>windowCloseButton,windowMaximizeButton,windowMinimizeButton</default>
+        </entry>
+    </group>
+
+    <group name="Behavior">
+        <entry name="widgetActiveTaskSource" type="Enum">
+            <choices>
+                <choice name="ActiveTask" />
+                <choice name="LastActiveTask" />
+                <choice name="LastActiveMaximized" />
+            </choices>
+            <default>0</default>
+        </entry>
+        <entry name="widgetActiveTaskFilterByActivity" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="widgetActiveTaskFilterByScreen" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="widgetActiveTaskFilterByVirtualDesktop" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="widgetActiveTaskFilterNotMaximized" type="Bool">
+            <default>false</default>
+        </entry>
+        <entry name="disableButtonsForNotHoveredWidget" type="Bool">
+            <default>false</default>
+        </entry>
         </entry>
     </group>
 </kcfg>
