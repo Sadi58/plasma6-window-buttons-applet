@@ -11,7 +11,6 @@ QtObject {
         WindowControlButton,
         Spacer
     }
-
     enum DisabledMode {
         Deactivated,
         HideKeepSpace,
