@@ -19,10 +19,4 @@ ConfigModel {
         icon: "preferences-desktop"
         source: "config/ConfigBehavior.qml"
     }
-
-    ConfigCategory {
-        name: i18n("Effects")
-        icon: "special-effects-symbolic"
-        source: "config/effect/ConfigEffects.qml"
-    }
 }
