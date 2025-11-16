@@ -11,7 +11,7 @@ This plasmoid is forked from [![Application Title Bar](https://github.com/antroi
 
 KDE Plasma 6 window control buttons plasmoid compatible with Qt6.
 
-Screenshot: Coming soon...
+<img src="docs/img/AllInOne.png" />
 
 ### Goal
 
