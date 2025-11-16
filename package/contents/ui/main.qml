@@ -166,11 +166,6 @@ PlasmoidItem {
         Layout.preferredWidth: root.vertical ? widgetRow.Layout.preferredHeight : widgetRow.Layout.preferredWidth
         Layout.preferredHeight: root.vertical ? widgetRow.Layout.preferredWidth : widgetRow.Layout.preferredHeight
 
-        WidgetToolTip {
-            anchors.fill: parent
-            tasksModel: root.tasksModel
-        }
-
         RowLayout {
             id: widgetRow
 
@@ -268,29 +263,6 @@ PlasmoidItem {
                 } else {
                     return preferredWidth;
                 }
-            }
-        }
-
-        WidgetEffectsRepeater {
-            id: effectsRepeater
-        }
-
-        Component.onCompleted: effectsRepeater.updateEffectRules()
-
-        Connections {
-            target: root.tasksModel
-            function onActiveWindowUpdated() {
-                effectsRepeater.updateEffectsState();
-            }
-        }
-
-        Connections {
-            target: plasmoid.configuration
-            function onEffectRulesChanged() {
-                effectsRepeater.updateEffectRules();
-            }
-            function onEffectsChanged() {
-                effectsRepeater.updateEffectRules();
             }
         }
     }
