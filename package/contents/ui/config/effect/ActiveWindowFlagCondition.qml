@@ -58,36 +58,8 @@ RowLayout {
                 value: "maximized"
             },
             {
-                name: i18n("Shadeable"),
-                value: "shadeable"
-            },
-            {
-                name: i18n("Shaded"),
-                value: "shaded"
-            },
-            {
-                name: i18n("Has App Menu"),
-                value: "hasAppMenu"
-            },
-            {
                 name: i18n("On all Virtual Desktops"),
                 value: "onAllVirtualDesktops"
-            },
-            {
-                name: i18n("Keep Above"),
-                value: "keepAbove"
-            },
-            {
-                name: i18n("Keep Below"),
-                value: "keepBelow"
-            },
-            {
-                name: i18n("Full Screenable"),
-                value: "fullScreenable"
-            },
-            {
-                name: i18n("Full Screen"),
-                value: "fullScreen"
             },
             {
                 name: i18n("Resizable"),
