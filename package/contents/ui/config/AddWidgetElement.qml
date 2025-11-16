@@ -14,7 +14,7 @@ ComboBox {
 
     model: ListModel {
         ListElement {
-            name: "Add element..."
+            name: "Add button..."
         }
 
         ListElement {
@@ -30,21 +30,6 @@ ComboBox {
         ListElement {
             name: "Window maximize button"
             value: "windowMaximizeButton"
-        }
-
-        ListElement {
-            name: "Keep window above button"
-            value: "windowKeepAboveButton"
-        }
-
-        ListElement {
-            name: "Keep window below button"
-            value: "windowKeepBelowButton"
-        }
-
-        ListElement {
-            name: "Shade window button"
-            value: "windowShadeButton"
         }
 
         ListElement {
