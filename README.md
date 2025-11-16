@@ -7,28 +7,15 @@ This is a Plasma 6 applet that shows window buttons in your panels.
 
 This plasmoid is forked from [![Application Title Bar](https://github.com/antroids/application-title-bar)] (hence all credit goes to [![antroids](https://github.com/antroids)] to create a variant that includes window control buttons only. All I've done is to remove everything other than necessary to mimick the Plasma 5 **Window Buttons** applet by [![psifidos](https://github.com/psifidotos)]) 
 
-### NOTE: Plasma 6.3 - 6.3.3 Compatibility issues
-A Drag action handler does not work properly on Plasma 6.3 - 6.3.3 with ButtonsRebind KWin plugin enabled.
-The plugin can be disabled with the following command:
-```bash
-kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key buttonsrebindEnabled false && qdbus6 org.kde.KWin /Plugins UnloadPlugin "buttonsrebind"
-```
-The names of `kwriteconfig6` and `qdbus6` utilities can be different for your distribution.
-
-To enable the plugin again:
-```bash
-kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key buttonsrebindEnabled true && qdbus6 org.kde.KWin /Plugins LoadPlugin "buttonsrebind"
-```
-
 ## Description
 
-KDE plasmoid compatible with Qt6 with window buttons only.
+KDE Plasma 6 window control buttons plasmoid compatible with Qt6.
 
 Screenshot: Coming soon...
 
 ### Goal
 
-Stable and fast widget with control buttons only, ideally with the same functionality as Unity panel.
+Stable and fast widget with window control buttons only, ideally with the same functionality as Unity panel.
 Using pure QML to avoid incompatibility and maintenance issues.
 
 Disadvantages of pure QML widget:
@@ -36,12 +23,9 @@ Disadvantages of pure QML widget:
 
 ### Features
 
-* Close, minimize, maximize, keep below/above buttons.
-* Configure actions on mouse events.
-* Configurable elements set and order.
+* Close, minimize, maximize buttons.
 * Different theming options. Internal Breeze icons, System icons and Aurorae theme.
 * Configurable layout and geometry.
-* Click and drag widget to reposition window (as if you'd dragged the window's integrated title bar)
 
 ## Installing
 
@@ -52,7 +36,7 @@ Disadvantages of pure QML widget:
 
 2. Manual with Plasma UI
     - Install via "Add Widgets..." -> "Get New Widgets..." -> "Download..."
-    - Install from [KDE Store](https://store.kde.org/p/???????)
+    - Install from [KDE Store](https://store.kde.org/p/NOT-AVAILABLE-YET)
     - Download Latest \*.plasmoid from [Releases page](https://github.com/sadi58/plasma6-window-buttons-applet/releases) and install it via "Add Widgets..." -> "Get New Widgets..." -> "Install Widget From Local file"
 
 3. Nix (needs Nixpkgs unstable 24.11 or later)
