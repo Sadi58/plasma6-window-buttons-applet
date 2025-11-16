@@ -7,7 +7,7 @@
             }
         ],
         "Category": "Windows and Tasks",
-        "Description": "A widget with buttons to control active task",
+        "Description": "Shows the control buttons of the active window",
         "Icon": "preferences-desktop-theme-windowdecorations",
         "Id": "com.github.sadi58.plasma6-window-buttons-applet",
         "Name": "Window Buttons",
