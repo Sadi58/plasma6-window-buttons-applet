@@ -66,7 +66,7 @@ KCM.SimpleKCM {
         SpinBox {
             id: widgetSpacing
 
-            Kirigami.FormData.label: i18n("Spacing between elements:")
+            Kirigami.FormData.label: i18n("Spacing between buttons:")
             from: 0
             to: 32
         }
@@ -132,7 +132,7 @@ KCM.SimpleKCM {
 
             textRole: "text"
             valueRole: "value"
-            Kirigami.FormData.label: i18n("Show disabled elements:")
+            Kirigami.FormData.label: i18n("Show disabled buttons:")
             model: [
                 {
                     "value": WidgetElement.DisabledMode.Deactivated,
@@ -158,7 +158,7 @@ KCM.SimpleKCM {
         WidgetElements {
             id: widgetElements
 
-            Kirigami.FormData.label: i18n("Elements:")
+            Kirigami.FormData.label: i18n("Buttons:")
         }
 
         AddWidgetElement {
@@ -278,7 +278,7 @@ You can install more of regular Aurorae themes for window decorations in System 
         WidgetElements {
             id: widgetElementsMaximized
 
-            Kirigami.FormData.label: i18n("Elements:")
+            Kirigami.FormData.label: i18n("Buttons:")
             enabled: overrideElementsMaximized.checked
         }
 
